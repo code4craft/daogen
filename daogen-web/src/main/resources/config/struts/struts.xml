@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding= "UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd" >
+
+<struts>
+       <!--
+            use in develop environment
+      -->
+       <constant name="struts.devMode" value="false" />
+       <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+       <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+       <constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+        <constant name="struts.action.excludePattern" value="/assets/.*" />
+        <package name="index" namespace="/" extends="struts-default">
+      		<default-action-ref name="index" />
+            <action name="index" class="com.dianping.daogen.action.IndexAction">
+                <result name="success" type="freemarker">/WEB-INF/pages/index.ftl</result>
+            </action>
+            <action name="generate" class="com.dianping.daogen.action.GenerateAction">
+                <result name="success" type="freemarker">/WEB-INF/pages/generate.ftl</result>
+                <result name="error" type="freemarker">/WEB-INF/pages/error.ftl</result>
+            </action>
+       </package>
+</struts>
