@@ -130,7 +130,7 @@
                 </div>
             </div><!-- /form-group -->
         </fieldset><!-- /fieldset -->
-    <div>另外，别忘了sqlmap-config.xml的配置！欢迎参与项目<a href="https://github.com/code4craft/daogen">https://github.com/code4craft/daogen</a>，更多功能敬请期待！</div>
+    <div>另外，别忘了sqlmap-config.xml的配置！欢迎参与项目<a href="http://code.dianpingoa.com/yihua.huang/daogen/">http://code.dianpingoa.com/yihua.huang/daogen/</a>，更多功能敬请期待！</div>
 </div><!-- /box -->
 
 

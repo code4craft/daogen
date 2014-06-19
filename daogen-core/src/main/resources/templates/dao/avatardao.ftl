@@ -13,7 +13,7 @@ import ${imp};
 
 /**
 *
-* Create by daogen https://github.com/code4craft/daogen
+* Create by daogen http://code.dianpingoa.com/yihua.huang/daogen/
 *
 * @author yihua.huang@dianping.com
 */

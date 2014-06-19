@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 <#assign entityname = model.name?uncap_first>
 /**
 *
-* Create by daogen https://github.com/code4craft/daogen
+* Create by daogen http://code.dianpingoa.com/yihua.huang/daogen/
 *
 * @author yihua.huang@dianping.com
 */

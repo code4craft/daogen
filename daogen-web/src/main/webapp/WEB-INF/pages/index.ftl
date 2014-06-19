@@ -137,7 +137,7 @@ CREATE TABLE `DP_DaoGen` (
                 <label class="col-sm-2 control-label" for="inputMultiple">说明:</label>
                 <div class="col-sm-10">
                     <p>可生成Entity、Dao、SqlMap及Test，支持的方法会逐渐增加</p>
-                    <p>代码地址:<a href="https://github.com/code4craft/daogen">https://github.com/code4craft/daogen</a></p>
+                    <p>代码地址:<a href="http://code.dianpingoa.com/yihua.huang/daogen/">http://code.dianpingoa.com/yihua.huang/daogen/</a></p>
                 </div>
             </div>
             <div class="form-group">
