@@ -126,6 +126,14 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="inputTextarea">appcontext-xxx-dao.xml</label>
                 <div class="col-sm-20">
+                    <textarea rows="20" class="form-control">
+
+                    </textarea>
+                </div>
+            </div><!-- /form-group -->
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="inputTextarea">appcontext-xxx-dao.xml</label>
+                <div class="col-sm-20">
                     <textarea rows="20" class="form-control">${springConfig}</textarea>
                 </div>
             </div><!-- /form-group -->
