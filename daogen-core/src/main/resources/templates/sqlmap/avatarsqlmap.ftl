@@ -2,7 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 
 
-<!--Create by daogen http://code.dianpingoa.com/yihua.huang/daogen/-->
+<!--Create by daogen https://github.com/code4craft/daogen-->
 <!--@author yihua.huang@dianping.com-->
 <sqlMap namespace="${model.name}">
 

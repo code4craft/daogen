@@ -9,7 +9,7 @@ import ${imp};
 
 /**
 *
-* Create by daogen http://code.dianpingoa.com/yihua.huang/daogen/<#if table.comment?exists>
+* Create by daogen https://github.com/code4craft/daogen<#if table.comment?exists>
 *
 * ${table.comment}</#if>
 *
