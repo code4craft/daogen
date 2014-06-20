@@ -100,31 +100,31 @@
     </h2>
         <fieldset>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputTextarea">${model.name}Entity.java</label>
+                <label class="col-sm-10 control-label" for="inputTextarea"><h3>${model.name}Entity.java</h3></label>
                 <div class="col-sm-20">
                     <textarea rows="20" class="form-control">${entity}</textarea>
                 </div>
             </div><!-- /form-group -->
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputTextarea">${model.name}Dao.java</label>
+                <label class="col-sm-10 control-label" for="inputTextarea"><h3>${model.name}Dao.java</h3></label>
                 <div class="col-sm-20">
                     <textarea rows="20" class="form-control">${dao}</textarea>
                 </div>
             </div><!-- /form-group -->
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputTextarea">${model.name}.xml</label>
+                <label class="col-sm-10 control-label" for="inputTextarea"><h3>${model.name}.xml</h3></label>
                 <div class="col-sm-20">
                     <textarea rows="20" class="form-control">${sqlMap}</textarea>
                 </div>
             </div><!-- /form-group -->
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputTextarea">${model.name}DaoTest.java</label>
+                <label class="col-sm-10 control-label" for="inputTextarea"><h3>${model.name}DaoTest.java</h3></label>
                 <div class="col-sm-20">
                     <textarea rows="20" class="form-control">${test}</textarea>
                 </div>
             </div><!-- /form-group -->
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputTextarea">AbstractDAOTest.java(供参考)</label>
+                <label class="col-sm-10 control-label" for="inputTextarea"><h3>AbstractDAOTest.java(供参考)</h3></label>
                 <div class="col-sm-20">
                     <textarea rows="20" class="form-control">
 package com.dianping.tuangou.navi.dal.dao.test;
@@ -173,7 +173,7 @@ public abstract class AbstractDAOTest {
                 </div>
             </div><!-- /form-group -->
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputTextarea">appcontext-xxx-dao.xml</label>
+                <label class="col-sm-10 control-label" for="inputTextarea"><h3>appcontext-xxx-dao.xml</h3></label>
                 <div class="col-sm-20">
                     <textarea rows="10" class="form-control">${springConfig}</textarea>
                 </div>
