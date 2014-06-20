@@ -27,7 +27,7 @@
         SELECT <#list model.fields as field>`${field.column.name}`<#if (field_index+1) < model.fields?size>,</#if></#list>
         FROM ${table.name}
         WHERE `${method.params[0].column.name}` > #${method.params[0].name}#
-        ORDER By `${method.params[0].column.name}` DESC
+        ORDER By `${method.params[0].column.name}` ASC
         LIMIT ${method.limit};
     </select>
 
