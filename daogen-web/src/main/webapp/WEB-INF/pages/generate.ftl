@@ -124,17 +124,58 @@
                 </div>
             </div><!-- /form-group -->
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputTextarea">appcontext-xxx-dao.xml</label>
+                <label class="col-sm-2 control-label" for="inputTextarea">AbstractDAOTest.java(供参考)</label>
                 <div class="col-sm-20">
                     <textarea rows="20" class="form-control">
+package com.dianping.tuangou.navi.dal.dao.test;
 
+import junit.framework.Assert;
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath*:config/spring/local/appcontext-*.xml","classpath*:config/spring/common/appcontext-*.xml" })
+public abstract class AbstractDAOTest {
+
+    protected void print(Object obj) {
+        System.out.println(ToStringBuilder.reflectionToString(obj, ToStringStyle.MULTI_LINE_STYLE));
+    }
+
+    private long start;
+
+    public void notNull(Object obj) {
+        assertNotNull(obj);
+    }
+
+    public void isNull(Object obj) {
+        assertNull(obj);
+    }
+
+    public void equal(Object expected, Object actual) {
+        Assert.assertEquals(expected, actual);
+    }
+
+    public void start() {
+        this.start = System.currentTimeMillis();
+    }
+
+    public void end() {
+        System.out.println("耗时: " + (System.currentTimeMillis() - start) + "ms");
+    }
+}
                     </textarea>
                 </div>
             </div><!-- /form-group -->
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="inputTextarea">appcontext-xxx-dao.xml</label>
                 <div class="col-sm-20">
-                    <textarea rows="20" class="form-control">${springConfig}</textarea>
+                    <textarea rows="10" class="form-control">${springConfig}</textarea>
                 </div>
             </div><!-- /form-group -->
         </fieldset><!-- /fieldset -->
