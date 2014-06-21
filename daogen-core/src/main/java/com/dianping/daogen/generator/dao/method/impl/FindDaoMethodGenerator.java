@@ -23,12 +23,12 @@ public class FindDaoMethodGenerator extends AbstractDaoMethodGenerator {
     @Override
     protected List<DaoMethod.Param> getMethodParams(GeneratorContext generatorContext) {
         DaoMethod.Param param = new DaoMethod.Param();
-        Field primaryField = generatorContext.getModel().getPrimaryField();
+        Field primaryField = getPrimaryField(generatorContext);
         param.setName(StringUtils.uncapitalize(primaryField.getName())+"s");
         param.setType(new Type(TypeUtils.getBoxedType(primaryField.getTypeOriginName())));
         param.setCondition(true);
         param.setMulti(true);
-        param.setColumn(primaryField.getColumn());
+        param.setColumn(getPrimaryColumn(generatorContext));
         return Collections.singletonList(param);
     }
 

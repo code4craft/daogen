@@ -1,7 +1,7 @@
 package com.dianping.daogen.parser.db;
 
-import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.model.db.Table;
+import com.dianping.daogen.model.mapping.EntityColumn;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class MysqlCreateTableParser implements DBParser {
             if (matcher4Comment.find()){
                 comment = matcher4Comment.group(1);
             }
-            List<Column> columns = parseColunms(fields);
+            List<EntityColumn> columns = parseColunms(fields);
             table.setColumns(columns);
             table.setComment(StringUtils.removeEnd(comment,"表"));
             return table;
@@ -50,7 +50,7 @@ public class MysqlCreateTableParser implements DBParser {
         return null;
     }
 
-    private List<Column> parseColunms(String fieldsText) {
+    private List<EntityColumn> parseColunms(String fieldsText) {
         Matcher matcher = pattern4PK.matcher(fieldsText);
         String nameOfPK = "";
         if (matcher.find()) {
@@ -59,7 +59,7 @@ public class MysqlCreateTableParser implements DBParser {
         }
         fieldsText = fieldsText.replaceAll("\\(\\d+,\\d+\\)", "");
         matcher = pattern4Fields.matcher(fieldsText);
-        List<Column> fieldList = new ArrayList<Column>();
+        List<EntityColumn> fieldList = new ArrayList<EntityColumn>();
         while (matcher.find()) {
             String name = matcher.group(1).replace("`", "");
             String type = matcher.group(2);
@@ -68,7 +68,7 @@ public class MysqlCreateTableParser implements DBParser {
             if (matcher4Comment.find()) {
                 comment = matcher4Comment.group(1);
             }
-            fieldList.add(new Column(name, type, name.equals(nameOfPK), comment));
+            fieldList.add(new EntityColumn(name, type, name.equals(nameOfPK), comment));
         }
         return fieldList;
     }

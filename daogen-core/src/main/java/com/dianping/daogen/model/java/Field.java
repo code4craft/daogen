@@ -1,6 +1,5 @@
 package com.dianping.daogen.model.java;
 
-import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.utils.TypeUtils;
 import lombok.Data;
 
@@ -12,12 +11,9 @@ public class Field extends Type {
 
     private String name;
 
-    private Column column;
-
-    public Field(String name, String typeName, Column column) {
+    public Field(String name, String typeName) {
         super(typeName);
         this.name = name;
-        this.column = column;
     }
 
     public String getSuggestValue(){

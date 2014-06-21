@@ -17,13 +17,4 @@ public class Model extends Type {
 
     private List<Field> fields;
 
-    public Field getPrimaryField() {
-        for (Field field : fields) {
-            if (field.getColumn().isPrimaryKey()) {
-                return field;
-            }
-        }
-        return null;
-    }
-
 }

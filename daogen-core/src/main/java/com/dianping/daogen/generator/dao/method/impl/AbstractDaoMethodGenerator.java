@@ -1,8 +1,10 @@
 package com.dianping.daogen.generator.dao.method.impl;
 
 import com.dianping.daogen.generator.GeneratorContext;
+import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.model.java.DaoMethod;
 import com.dianping.daogen.generator.dao.method.DaoMethodGenerator;
+import com.dianping.daogen.model.java.Field;
 import com.dianping.daogen.model.java.Type;
 
 import java.util.List;
@@ -26,6 +28,18 @@ public abstract class AbstractDaoMethodGenerator implements DaoMethodGenerator {
     }
 
     protected void postGenerate(DaoMethod daoMethod) {
+    }
+
+    protected Column getPrimaryColumn(GeneratorContext generatorContext) {
+        return generatorContext.getTable().getPrimaryKey();
+    }
+
+    protected Field getPrimaryField(GeneratorContext generatorContext) {
+        Field primaryField = null;
+        if (generatorContext.getTable().getPrimaryKey() != null) {
+            primaryField = generatorContext.getTable().getPrimaryKey().getField();
+        }
+        return primaryField;
     }
 
     protected abstract Type getReturnType(GeneratorContext generatorContext);

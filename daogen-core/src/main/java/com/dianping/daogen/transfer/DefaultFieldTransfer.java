@@ -1,8 +1,8 @@
 package com.dianping.daogen.transfer;
 
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.model.db.Column;
-import com.dianping.daogen.model.java.Field;
+import com.dianping.daogen.model.mapping.EntityColumn;
+import com.dianping.daogen.model.mapping.EntityField;
 import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;
@@ -19,7 +19,7 @@ public class DefaultFieldTransfer implements FieldTransfer {
     }};
 
     @Override
-    public Field transfer(Column column, GeneratorContext generatorContext) {
+    public EntityField transfer(EntityColumn column, GeneratorContext generatorContext) {
         if (ignoreColumns.contains(column.getName())) {
             return null;
         }
@@ -27,7 +27,9 @@ public class DefaultFieldTransfer implements FieldTransfer {
         if (transferType == null) {
             throw new IllegalArgumentException("Unknown db type " + column);
         }
-        return new Field(transferName(column.getName()), transferType.getName(), column);
+        EntityField entityField = new EntityField(transferName(column.getName()), transferType.getName(), column);
+        column.setField(entityField);
+        return entityField;
     }
 
     protected String transferName(String columnName) {

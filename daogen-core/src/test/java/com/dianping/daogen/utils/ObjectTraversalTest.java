@@ -12,7 +12,7 @@ public class ObjectTraversalTest {
     @Test
     public void testTraverse() throws Exception {
         Column column = new Column("C1", "int", false, "test");
-        Field field = new Field("name", "typeName", column);
+        Field field = new Field("name", "typeName");
         ObjectTraversal objectTraversal = new ObjectTraversal(new ObjectVisitor() {
             @Override
             public void visit(String name, Object object) {

@@ -15,7 +15,7 @@
     <#if method.type=="INSERT">
     <insert id="${method.name}" parameterClass="map">
         INSERT INTO ${table.name}
-        (<#list model.fields as field>`${mappings.fieldColumnMap[field.name].name}`<#if (field_index+1) < model.fields?size>,</#if></#list>)
+        (<#list model.fields as field>`${field.column.name}`<#if (field_index+1) < model.fields?size>,</#if></#list>)
         VALUES
         (<#list model.fields as field>#${method.params[0].name}.${field.name}#<#if (field_index+1) < model.fields?size>,</#if></#list>);
     </insert>
@@ -23,7 +23,7 @@
     </#if>
     <#if method.name=="findByStartId">
     <select id="${method.name}" resultMap="${model.name?uncap_first}" parameterClass="map">
-        SELECT <#list model.fields as field>`${mappings.fieldColumnMap[field.name].name}`<#if (field_index+1) < model.fields?size>,</#if></#list>
+        SELECT <#list model.fields as field>`${field.column.name}`<#if (field_index+1) < model.fields?size>,</#if></#list>
         FROM ${table.name}
         WHERE `${method.params[0].column.name}` > #${method.params[0].name}#
         ORDER By `${method.params[0].column.name}` ASC
@@ -32,7 +32,7 @@
 
     <#elseif method.type=="LOAD" || method.type=="QUERY">
     <select id="${method.name}" resultMap="${model.name?uncap_first}" parameterClass="map">
-        SELECT <#list model.fields as field>`${mappings.fieldColumnMap[field.name].name}`<#if (field_index+1) < model.fields?size>,</#if></#list>
+        SELECT <#list model.fields as field>`${field.column.name}`<#if (field_index+1) < model.fields?size>,</#if></#list>
         FROM ${table.name}
         WHERE <#list method.params as param><#if param.condition><#if param.multi>`${param.column.name}` in
         <iterate property="${param.name}" open="(" close=")" conjunction=",">

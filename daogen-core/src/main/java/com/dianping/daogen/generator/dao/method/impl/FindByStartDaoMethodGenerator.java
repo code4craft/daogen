@@ -23,11 +23,11 @@ public class FindByStartDaoMethodGenerator extends AbstractDaoMethodGenerator {
     protected List<DaoMethod.Param> getMethodParams(GeneratorContext generatorContext) {
         List<DaoMethod.Param> params = new ArrayList<DaoMethod.Param>();
         DaoMethod.Param param = new DaoMethod.Param();
-        Field primaryField = generatorContext.getModel().getPrimaryField();
+        Field primaryField = getPrimaryField(generatorContext);
         param.setName(StringUtils.uncapitalize(primaryField.getName()));
         param.setType(primaryField);
         param.setCondition(true);
-        param.setColumn(primaryField.getColumn());
+        param.setColumn(getPrimaryColumn(generatorContext));
         params.add(param);
 
         param = new DaoMethod.Param();

@@ -10,7 +10,7 @@ import java.util.List;
  * @author code4crafer@gmail.com
  */
 @Data
-public class Clazz extends Type {
+public class Class extends Type {
 
     private List<Field> fields;
 

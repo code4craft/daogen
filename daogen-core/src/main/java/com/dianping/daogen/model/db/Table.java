@@ -1,5 +1,6 @@
 package com.dianping.daogen.model.db;
 
+import com.dianping.daogen.model.mapping.EntityColumn;
 import lombok.Data;
 
 import java.util.List;
@@ -12,8 +13,17 @@ public class Table {
 
     private String name;
 
-    private List<Column> columns;
+    private List<EntityColumn> columns;
 
     private String comment;
+
+    public EntityColumn getPrimaryKey() {
+        for (EntityColumn column : columns) {
+            if (column.isPrimaryKey()) {
+                return column;
+            }
+        }
+        return null;
+    }
 
 }

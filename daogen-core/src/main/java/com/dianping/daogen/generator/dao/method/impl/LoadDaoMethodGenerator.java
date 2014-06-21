@@ -1,6 +1,7 @@
 package com.dianping.daogen.generator.dao.method.impl;
 
 import com.dianping.daogen.generator.GeneratorContext;
+import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.model.java.DaoMethod;
 import com.dianping.daogen.model.java.Type;
 import com.dianping.daogen.model.java.Field;
@@ -22,13 +23,15 @@ public class LoadDaoMethodGenerator extends AbstractDaoMethodGenerator {
     @Override
     protected List<DaoMethod.Param> getMethodParams(GeneratorContext generatorContext) {
         DaoMethod.Param param = new DaoMethod.Param();
-        Field primaryField = generatorContext.getModel().getPrimaryField();
+        Column primaryKey = getPrimaryColumn(generatorContext);
+        Field primaryField = getPrimaryField(generatorContext);
         param.setName(StringUtils.uncapitalize(primaryField.getName()));
         param.setType(primaryField);
         param.setCondition(true);
-        param.setColumn(primaryField.getColumn());
+        param.setColumn(primaryKey);
         return Collections.singletonList(param);
     }
+
 
     @Override
     protected String getMethodType(GeneratorContext generatorContext) {
