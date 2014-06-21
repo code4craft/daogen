@@ -1,7 +1,7 @@
 package com.dianping.daogen.utils;
 
-import com.dianping.daogen.model.db.Column;
-import com.dianping.daogen.model.java.Field;
+import com.dianping.daogen.db.model.Column;
+import com.dianping.daogen.java.model.Field;
 import org.junit.Test;
 
 /**

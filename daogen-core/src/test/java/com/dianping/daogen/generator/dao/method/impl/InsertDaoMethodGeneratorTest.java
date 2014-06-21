@@ -2,7 +2,7 @@ package com.dianping.daogen.generator.dao.method.impl;
 
 import com.dianping.daogen.generator.AbstractGeneratorTest;
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.model.java.DaoMethod;
+import com.dianping.daogen.java.model.DaoMethod;
 import org.junit.Test;
 
 /**

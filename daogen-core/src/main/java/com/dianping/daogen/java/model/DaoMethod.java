@@ -1,6 +1,6 @@
-package com.dianping.daogen.model.java;
+package com.dianping.daogen.java.model;
 
-import com.dianping.daogen.model.db.Column;
+import com.dianping.daogen.db.model.Column;
 import lombok.Data;
 
 import java.util.List;
@@ -15,9 +15,9 @@ public class DaoMethod {
 
     private String type;
 
-    private com.dianping.daogen.model.java.Type entity;
+    private com.dianping.daogen.java.model.Type entity;
 
-    private com.dianping.daogen.model.java.Type returnType;
+    private com.dianping.daogen.java.model.Type returnType;
 
     private String returnCollection;
 
@@ -36,7 +36,7 @@ public class DaoMethod {
     @Data
     public static class Param {
         private String name;
-        private com.dianping.daogen.model.java.Type type;
+        private com.dianping.daogen.java.model.Type type;
         private boolean multi = false;
         /**
          * true: condition in where clause <br/>

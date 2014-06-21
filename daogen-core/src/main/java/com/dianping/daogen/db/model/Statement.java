@@ -1,4 +1,4 @@
-package com.dianping.daogen.model.db;
+package com.dianping.daogen.db.model;
 
 import lombok.Data;
 

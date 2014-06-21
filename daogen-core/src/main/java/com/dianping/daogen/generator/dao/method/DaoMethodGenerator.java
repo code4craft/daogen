@@ -1,7 +1,7 @@
 package com.dianping.daogen.generator.dao.method;
 
 import com.dianping.daogen.generator.Generator;
-import com.dianping.daogen.model.java.DaoMethod;
+import com.dianping.daogen.java.model.DaoMethod;
 
 /**
  * @author code4crafer@gmail.com

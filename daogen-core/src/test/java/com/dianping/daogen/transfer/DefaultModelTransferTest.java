@@ -1,9 +1,11 @@
 package com.dianping.daogen.transfer;
 
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.parser.db.MysqlCreateTableParser;
-import com.dianping.daogen.model.db.Table;
-import com.dianping.daogen.model.java.Model;
+import com.dianping.daogen.db.parser.MysqlCreateTableParser;
+import com.dianping.daogen.db.model.Table;
+import com.dianping.daogen.java.model.Model;
+import com.dianping.daogen.transfer.db2java.DefaultFieldTransfer;
+import com.dianping.daogen.transfer.db2java.DefaultModelTransfer;
 import org.junit.Before;
 import org.junit.Test;
 

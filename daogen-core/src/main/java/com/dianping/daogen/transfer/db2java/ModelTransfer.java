@@ -1,8 +1,8 @@
-package com.dianping.daogen.transfer;
+package com.dianping.daogen.transfer.db2java;
 
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.model.db.Table;
-import com.dianping.daogen.model.java.Model;
+import com.dianping.daogen.db.model.Table;
+import com.dianping.daogen.java.model.Model;
 
 /**
  * @author code4crafer@gmail.com

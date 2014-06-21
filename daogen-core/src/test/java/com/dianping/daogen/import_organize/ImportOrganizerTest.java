@@ -1,8 +1,8 @@
 package com.dianping.daogen.import_organize;
 
-import com.dianping.daogen.model.java.Dao;
-import com.dianping.daogen.model.java.DaoMethod;
-import com.dianping.daogen.model.java.Type;
+import com.dianping.daogen.java.model.Dao;
+import com.dianping.daogen.java.model.DaoMethod;
+import com.dianping.daogen.java.model.Type;
 import org.junit.Test;
 
 import java.util.ArrayList;

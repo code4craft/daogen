@@ -6,8 +6,8 @@ import com.dianping.daogen.generator.dao.method.impl.FindByStartDaoMethodGenerat
 import com.dianping.daogen.generator.dao.method.impl.FindDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.InsertDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
-import com.dianping.daogen.model.java.Dao;
-import com.dianping.daogen.model.java.DaoMethod;
+import com.dianping.daogen.java.model.Dao;
+import com.dianping.daogen.java.model.DaoMethod;
 import lombok.Getter;
 import lombok.Setter;
 

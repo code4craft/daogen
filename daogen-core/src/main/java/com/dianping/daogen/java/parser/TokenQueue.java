@@ -1,4 +1,4 @@
-package com.dianping.daogen.parser.java;
+package com.dianping.daogen.java.parser;
 
 
 import com.dianping.daogen.utils.StringUtil;

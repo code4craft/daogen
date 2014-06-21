@@ -1,11 +1,11 @@
 package com.dianping.daogen.generator.dao.method.impl;
 
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.model.db.Column;
-import com.dianping.daogen.model.java.DaoMethod;
+import com.dianping.daogen.db.model.Column;
+import com.dianping.daogen.java.model.DaoMethod;
 import com.dianping.daogen.generator.dao.method.DaoMethodGenerator;
-import com.dianping.daogen.model.java.Field;
-import com.dianping.daogen.model.java.Type;
+import com.dianping.daogen.java.model.Field;
+import com.dianping.daogen.java.model.Type;
 
 import java.util.List;
 

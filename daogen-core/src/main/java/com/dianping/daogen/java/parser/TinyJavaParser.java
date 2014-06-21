@@ -1,4 +1,4 @@
-package com.dianping.daogen.parser.java;
+package com.dianping.daogen.java.parser;
 
 /**
  * 极其简单的Java解析器，只解析到方法级别<br/>

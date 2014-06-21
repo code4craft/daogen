@@ -1,10 +1,10 @@
-package com.dianping.daogen.transfer;
+package com.dianping.daogen.transfer.db2java;
 
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.model.db.Table;
-import com.dianping.daogen.model.java.Field;
-import com.dianping.daogen.model.java.Model;
-import com.dianping.daogen.model.mapping.EntityColumn;
+import com.dianping.daogen.db.model.Table;
+import com.dianping.daogen.java.model.Field;
+import com.dianping.daogen.java.model.Model;
+import com.dianping.daogen.transfer.model.EntityColumn;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;

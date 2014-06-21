@@ -5,12 +5,12 @@ import com.dianping.daogen.generator.dao.method.DaoGenerator;
 import com.dianping.daogen.generator.dao.method.DaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.InsertDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
-import com.dianping.daogen.model.db.Table;
-import com.dianping.daogen.model.java.Dao;
-import com.dianping.daogen.model.java.Model;
-import com.dianping.daogen.parser.db.MysqlCreateTableParser;
-import com.dianping.daogen.transfer.DefaultFieldTransfer;
-import com.dianping.daogen.transfer.DefaultModelTransfer;
+import com.dianping.daogen.db.model.Table;
+import com.dianping.daogen.java.model.Dao;
+import com.dianping.daogen.java.model.Model;
+import com.dianping.daogen.db.parser.MysqlCreateTableParser;
+import com.dianping.daogen.transfer.db2java.DefaultFieldTransfer;
+import com.dianping.daogen.transfer.db2java.DefaultModelTransfer;
 
 /**
  * @author code4crafer@gmail.com

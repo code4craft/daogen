@@ -1,6 +1,6 @@
-package com.dianping.daogen.parser.db;
+package com.dianping.daogen.db.parser;
 
-import com.dianping.daogen.model.db.Table;
+import com.dianping.daogen.db.model.Table;
 
 /**
  * @author code4crafer@gmail.com

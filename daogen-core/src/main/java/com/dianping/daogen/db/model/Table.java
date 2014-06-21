@@ -1,6 +1,6 @@
-package com.dianping.daogen.model.db;
+package com.dianping.daogen.db.model;
 
-import com.dianping.daogen.model.mapping.EntityColumn;
+import com.dianping.daogen.transfer.model.EntityColumn;
 import lombok.Data;
 
 import java.util.List;

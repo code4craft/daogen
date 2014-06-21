@@ -1,7 +1,7 @@
-package com.dianping.daogen.model.mapping;
+package com.dianping.daogen.transfer.model;
 
-import com.dianping.daogen.model.db.Column;
-import com.dianping.daogen.model.java.Field;
+import com.dianping.daogen.db.model.Column;
+import com.dianping.daogen.java.model.Field;
 import lombok.Data;
 
 /**

@@ -1,8 +1,8 @@
 package com.dianping.daogen.parser;
 
-import com.dianping.daogen.model.db.Table;
-import com.dianping.daogen.parser.db.DBParser;
-import com.dianping.daogen.parser.db.MysqlCreateTableParser;
+import com.dianping.daogen.db.model.Table;
+import com.dianping.daogen.db.parser.DBParser;
+import com.dianping.daogen.db.parser.MysqlCreateTableParser;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
