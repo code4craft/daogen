@@ -29,7 +29,6 @@ public class FindDaoMethodGenerator extends AbstractDaoMethodGenerator {
         param.setCondition(true);
         param.setMulti(true);
         param.setColumn(primaryField.getColumn());
-        generatorContext.getDao().getImports().merge("java.util.List");
         return Collections.singletonList(param);
     }
 

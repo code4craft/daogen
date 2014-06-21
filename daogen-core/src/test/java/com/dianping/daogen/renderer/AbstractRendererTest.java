@@ -1,16 +1,14 @@
 package com.dianping.daogen.renderer;
 
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.generator.dao.method.DaoGenerator;
 import com.dianping.daogen.generator.dao.method.DaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.InsertDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
-import com.dianping.daogen.generator.entity.Entity;
-import com.dianping.daogen.generator.entity.EntityGenerator;
-import com.dianping.daogen.parser.MysqlCreateTableParser;
 import com.dianping.daogen.model.db.Table;
+import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.model.java.Model;
+import com.dianping.daogen.parser.MysqlCreateTableParser;
 import com.dianping.daogen.transfer.DefaultFieldTransfer;
 import com.dianping.daogen.transfer.DefaultModelTransfer;
 
@@ -30,18 +28,13 @@ public abstract class AbstractRendererTest {
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
     protected GeneratorContext getContext() {
-        EntityGenerator entityGenerator = new EntityGenerator();
         DefaultModelTransfer modelTransfer = new DefaultModelTransfer();
         modelTransfer.setFieldTransfer(new DefaultFieldTransfer());
-        entityGenerator.setSuffix("Entity");
-        entityGenerator.setPkg("com.dianping.entity");
         Table table = new MysqlCreateTableParser().parse(sql);
         Model model = modelTransfer.transfer(table);
         GeneratorContext generatorContext = new GeneratorContext();
         generatorContext.setModel(model);
         generatorContext.setTable(table);
-        Entity entity = entityGenerator.generate(generatorContext);
-        generatorContext.setEntity(entity);
         DaoGenerator daoGenerator = new DaoGenerator();
         InsertDaoMethodGenerator insertDaoMethodGenerator = new InsertDaoMethodGenerator();
         LoadDaoMethodGenerator loadDaoMethodGenerator = new LoadDaoMethodGenerator();

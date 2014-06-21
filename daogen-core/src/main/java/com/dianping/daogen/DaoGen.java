@@ -5,8 +5,6 @@ import com.dianping.daogen.config.Task;
 import com.dianping.daogen.generator.GeneratorContext;
 import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.generator.dao.method.DaoGenerator;
-import com.dianping.daogen.generator.entity.Entity;
-import com.dianping.daogen.generator.entity.EntityGenerator;
 import com.dianping.daogen.parser.MysqlCreateTableParser;
 import com.dianping.daogen.render.FreeMarkerRenderer;
 import com.dianping.daogen.render.FreemarkerWrapper;
@@ -77,18 +75,13 @@ public class DaoGen {
 
     public GeneratorContext generateGeneratorContext(Task task) throws TemplateModelException {
         Project project = task.getProject();
-        EntityGenerator entityGenerator = new EntityGenerator();
         DefaultModelTransfer modelTransfer = new DefaultModelTransfer();
         modelTransfer.setFieldTransfer(new DefaultFieldTransfer());
-        entityGenerator.setSuffix("Entity");
-        entityGenerator.setPkg(project.getEntityPackage());
         Table table = new MysqlCreateTableParser().parse(task.getSql());
         Model model = modelTransfer.transfer(table);
         GeneratorContext generatorContext = new GeneratorContext();
         generatorContext.setModel(model);
         generatorContext.setTable(table);
-        Entity entity = entityGenerator.generate(generatorContext);
-        generatorContext.setEntity(entity);
         DaoGenerator daoGenerator = DaoGenerator.createByMethodNames(task.getMethods());
         daoGenerator.setPkg(project.getDaoPackage());
         Dao dao = daoGenerator.generate(generatorContext);

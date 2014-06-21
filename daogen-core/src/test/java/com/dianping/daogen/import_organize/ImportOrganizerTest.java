@@ -1,6 +1,5 @@
 package com.dianping.daogen.import_organize;
 
-import com.dianping.daogen.generator.entity.Entity;
 import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.model.java.DaoMethod;
 import com.dianping.daogen.model.java.Type;
@@ -21,7 +20,7 @@ public class ImportOrganizerTest {
         Dao dao = new Dao();
         List<DaoMethod> daoMethods = new ArrayList<DaoMethod>();
         DaoMethod daoMethod = new DaoMethod();
-        Entity entity = new Entity();
+        Type entity = new Type();
         entity.setTypeOriginName("com.dianping.daogen.Entity1");
         daoMethod.setEntity(entity);
         List<DaoMethod.Param> params = new ArrayList<DaoMethod.Param>();
@@ -31,8 +30,9 @@ public class ImportOrganizerTest {
         daoMethod.setParams(params);
         daoMethods.add(daoMethod);
         dao.setMethods(daoMethods);
-        ImportOrganizer.organizeImports(dao);
-        assertThat(dao.getImports().getImports()).contains("com.dianping.daogen.Entity1");
-        assertThat(dao.getImports().getImports()).contains("java.util.Date");
+        Imports imports = new Imports();
+        ImportOrganizer.organizeImports(dao, imports);
+        assertThat(imports.getImports()).contains("com.dianping.daogen.Entity1");
+        assertThat(imports.getImports()).contains("java.util.Date");
     }
 }

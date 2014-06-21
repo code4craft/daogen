@@ -8,7 +8,7 @@ import java.util.List;
  * @author code4crafer@gmail.com
  */
 @Data
-public class Dao extends Clazz {
+public class Dao extends Type {
 
     private List<DaoMethod> methods;
 

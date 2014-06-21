@@ -1,6 +1,5 @@
 package com.dianping.daogen.model.java;
 
-import com.dianping.daogen.generator.entity.Entity;
 import com.dianping.daogen.model.db.Column;
 import lombok.Data;
 
@@ -16,7 +15,7 @@ public class DaoMethod {
 
     private String type;
 
-    private Entity entity;
+    private com.dianping.daogen.model.java.Type entity;
 
     private com.dianping.daogen.model.java.Type returnType;
 

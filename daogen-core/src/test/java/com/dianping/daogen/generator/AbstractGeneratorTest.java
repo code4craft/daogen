@@ -1,7 +1,5 @@
 package com.dianping.daogen.generator;
 
-import com.dianping.daogen.generator.entity.Entity;
-import com.dianping.daogen.generator.entity.EntityGenerator;
 import com.dianping.daogen.parser.MysqlCreateTableParser;
 import com.dianping.daogen.model.db.Table;
 import com.dianping.daogen.model.java.Model;
@@ -24,18 +22,13 @@ public abstract class AbstractGeneratorTest {
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
     protected GeneratorContext getContext(){
-        EntityGenerator entityGenerator = new EntityGenerator();
         DefaultModelTransfer modelTransfer = new DefaultModelTransfer();
         modelTransfer.setFieldTransfer(new DefaultFieldTransfer());
-        entityGenerator.setSuffix("Entity");
-        entityGenerator.setPkg("com.dianping.entity");
         Table table = new MysqlCreateTableParser().parse(sql);
         Model model = modelTransfer.transfer(table);
         GeneratorContext generatorContext = new GeneratorContext();
         generatorContext.setModel(model);
         generatorContext.setTable(table);
-        Entity entity = entityGenerator.generate(generatorContext);
-        generatorContext.setEntity(entity);
         return generatorContext;
     }
 

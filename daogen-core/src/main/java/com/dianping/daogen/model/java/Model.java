@@ -11,15 +11,15 @@ import java.util.List;
  */
 @AllArgsConstructor
 @Data
-public class Model {
+public class Model extends Type {
 
     private String name;
 
     private List<Field> fields;
 
-    public Field getPrimaryField(){
+    public Field getPrimaryField() {
         for (Field field : fields) {
-            if (field.getColumn().isPrimaryKey()){
+            if (field.getColumn().isPrimaryKey()) {
                 return field;
             }
         }

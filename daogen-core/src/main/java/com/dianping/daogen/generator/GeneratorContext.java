@@ -1,10 +1,10 @@
 package com.dianping.daogen.generator;
 
 import com.dianping.daogen.config.Project;
-import com.dianping.daogen.model.java.Dao;
-import com.dianping.daogen.generator.entity.Entity;
 import com.dianping.daogen.model.db.Table;
+import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.model.java.Model;
+import com.dianping.daogen.model.java.Type;
 import lombok.Data;
 
 import java.util.HashMap;
@@ -20,7 +20,7 @@ public class GeneratorContext {
 
     private Table table;
 
-    private Entity entity;
+    private Type entity;
 
     private Dao dao;
 

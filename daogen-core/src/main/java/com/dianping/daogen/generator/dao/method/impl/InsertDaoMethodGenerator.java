@@ -2,7 +2,6 @@ package com.dianping.daogen.generator.dao.method.impl;
 
 import com.dianping.daogen.generator.GeneratorContext;
 import com.dianping.daogen.model.java.DaoMethod;
-import com.dianping.daogen.generator.entity.Entity;
 import com.dianping.daogen.model.java.Type;
 import com.dianping.daogen.model.java.Model;
 import org.apache.commons.lang3.StringUtils;
@@ -22,11 +21,9 @@ public class InsertDaoMethodGenerator extends AbstractDaoMethodGenerator {
 
     @Override
     protected List<DaoMethod.Param> getMethodParams(GeneratorContext generatorContext) {
-        Entity entity = generatorContext.getEntity();
         Model model = generatorContext.getModel();
         DaoMethod.Param param = new DaoMethod.Param();
         param.setName(StringUtils.uncapitalize(model.getName()));
-        param.setType(entity);
         return Collections.singletonList(param);
     }
 

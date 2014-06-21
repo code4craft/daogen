@@ -2,12 +2,11 @@ package com.dianping.daogen.generator.dao.method;
 
 import com.dianping.daogen.generator.Generator;
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.generator.dao.method.impl.FindByStartDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.FindDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.InsertDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
-import com.dianping.daogen.import_organize.Imports;
+import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.model.java.DaoMethod;
 import lombok.Getter;
 import lombok.Setter;
@@ -70,11 +69,6 @@ public class DaoGenerator implements Generator<Dao> {
             daoMethods.add(daoMethod);
         }
         dao.setMethods(daoMethods);
-        Imports imports = dao.getImports();
-        for (DaoMethod daoMethod : daoMethods) {
-            imports.merge(daoMethod.getEntity().getTypeFullName());
-        }
-        dao.setImports(imports);
         dao.setTypeOriginName(pkg + "." + generatorContext.getModel().getName() + "Dao");
         return dao;
     }

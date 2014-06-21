@@ -1,6 +1,5 @@
 package com.dianping.daogen.import_organize;
 
-import com.dianping.daogen.model.java.Clazz;
 import com.dianping.daogen.model.java.Type;
 import com.dianping.daogen.utils.ObjectTraversal;
 import com.dianping.daogen.utils.ObjectVisitor;
@@ -10,8 +9,8 @@ import com.dianping.daogen.utils.ObjectVisitor;
  */
 public abstract class ImportOrganizer {
 
-    public static void organizeImports(Clazz clazz) {
-        ImportOrganizerVisitor organizerVisitor = new ImportOrganizerVisitor(clazz.getImports());
+    public static void organizeImports(Type clazz, Imports imports) {
+        ImportOrganizerVisitor organizerVisitor = new ImportOrganizerVisitor(imports);
         new ObjectTraversal(organizerVisitor).traverse("", clazz);
     }
 
