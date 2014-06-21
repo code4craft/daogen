@@ -17,7 +17,7 @@ public class LoadDaoMethodGenerator extends AbstractDaoMethodGenerator {
 
     @Override
     protected Type getReturnType(GeneratorContext generatorContext) {
-        return generatorContext.getEntity();
+        return generatorContext.getModel().getType();
     }
 
     @Override
@@ -35,7 +35,7 @@ public class LoadDaoMethodGenerator extends AbstractDaoMethodGenerator {
 
     @Override
     protected String getMethodType(GeneratorContext generatorContext) {
-        return DaoMethod.Type.LOAD;
+        return DaoMethod.MethodType.LOAD;
     }
 
     @Override

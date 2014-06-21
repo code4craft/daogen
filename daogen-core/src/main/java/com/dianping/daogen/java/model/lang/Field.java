@@ -1,6 +1,5 @@
 package com.dianping.daogen.java.model.lang;
 
-import com.dianping.daogen.utils.TypeUtils;
 import lombok.Data;
 
 /**
@@ -18,7 +17,4 @@ public class Field {
         this.name = name;
     }
 
-    public String getSuggestValue(){
-        return TypeUtils.getSuggestValue(type.getTypeOriginName());
-    }
 }

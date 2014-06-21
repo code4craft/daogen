@@ -9,7 +9,7 @@ import com.dianping.daogen.utils.ObjectVisitor;
  */
 public abstract class ImportOrganizer {
 
-    public static void organizeImports(Type clazz, Imports imports) {
+    public static void organizeImports(Object clazz, Imports imports) {
         ImportOrganizerVisitor organizerVisitor = new ImportOrganizerVisitor(imports);
         new ObjectTraversal(organizerVisitor).traverse("", clazz);
     }
@@ -25,7 +25,7 @@ public abstract class ImportOrganizer {
         @Override
         public void visit(String name, Object object) {
             if (object instanceof Type) {
-                imports.merge(((Type) object).getTypeOriginName());
+                imports.merge(((Type) object).getOriginName());
             }
         }
     }

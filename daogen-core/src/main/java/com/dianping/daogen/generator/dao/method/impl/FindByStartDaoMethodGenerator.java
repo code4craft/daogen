@@ -16,7 +16,7 @@ public class FindByStartDaoMethodGenerator extends AbstractDaoMethodGenerator {
 
     @Override
     protected Type getReturnType(GeneratorContext generatorContext) {
-        return generatorContext.getEntity();
+        return generatorContext.getModel().getType();
     }
 
     @Override
@@ -45,7 +45,7 @@ public class FindByStartDaoMethodGenerator extends AbstractDaoMethodGenerator {
 
     @Override
     protected String getMethodType(GeneratorContext generatorContext) {
-        return DaoMethod.Type.QUERY;
+        return DaoMethod.MethodType.QUERY;
     }
 
     @Override

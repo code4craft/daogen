@@ -21,8 +21,7 @@ public class ImportOrganizerTest {
         List<DaoMethod> daoMethods = new ArrayList<DaoMethod>();
         DaoMethod daoMethod = new DaoMethod();
         Type entity = new Type();
-        entity.setTypeOriginName("com.dianping.daogen.Entity1");
-        daoMethod.setEntity(entity);
+        entity.setOriginName("com.dianping.daogen.Entity1");
         List<DaoMethod.Param> params = new ArrayList<DaoMethod.Param>();
         DaoMethod.Param param = new DaoMethod.Param();
         param.setType(new Type("java.util.Date"));

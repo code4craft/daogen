@@ -1,6 +1,7 @@
 package com.dianping.daogen.java.model.dao;
 
 import com.dianping.daogen.db.model.Column;
+import com.dianping.daogen.java.model.lang.Type;
 import lombok.Data;
 
 import java.util.List;
@@ -15,9 +16,7 @@ public class DaoMethod {
 
     private String type;
 
-    private com.dianping.daogen.java.model.lang.Type entity;
-
-    private com.dianping.daogen.java.model.lang.Type returnType;
+    private Type returnType;
 
     private String returnCollection;
 
@@ -25,7 +24,7 @@ public class DaoMethod {
 
     private String limit;
 
-    public static interface Type {
+    public static interface MethodType {
         public static final String INSERT = "INSERT";
         public static final String UPDATE = "UPDATE";
         public static final String DELETE = "DELETE";
@@ -36,7 +35,7 @@ public class DaoMethod {
     @Data
     public static class Param {
         private String name;
-        private com.dianping.daogen.java.model.lang.Type type;
+        private Type type;
         private boolean multi = false;
         /**
          * true: condition in where clause <br/>

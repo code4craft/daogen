@@ -5,7 +5,7 @@
 <!--@author yihua.huang@dianping.com-->
 <sqlMap namespace="${model.name}">
 
-    <resultMap id="${model.name?uncap_first}" class="${entity.typeFullName}">
+    <resultMap id="${model.name?uncap_first}" class="${model.type.fullName}">
         <#list model.fields as field>
             <result column="${field.column.name}" property="${field.name}"/>
         </#list>

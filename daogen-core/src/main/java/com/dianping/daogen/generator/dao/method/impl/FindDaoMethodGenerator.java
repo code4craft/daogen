@@ -17,7 +17,7 @@ public class FindDaoMethodGenerator extends AbstractDaoMethodGenerator {
 
     @Override
     protected Type getReturnType(GeneratorContext generatorContext) {
-        return generatorContext.getEntity();
+        return generatorContext.getModel().getType();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class FindDaoMethodGenerator extends AbstractDaoMethodGenerator {
         DaoMethod.Param param = new DaoMethod.Param();
         Field primaryField = getPrimaryField(generatorContext);
         param.setName(StringUtils.uncapitalize(primaryField.getName())+"s");
-        param.setType(new Type(TypeUtils.getBoxedType(primaryField.getType().getTypeOriginName())));
+        param.setType(new Type(TypeUtils.getBoxedType(primaryField.getType().getOriginName())));
         param.setCondition(true);
         param.setMulti(true);
         param.setColumn(getPrimaryColumn(generatorContext));
@@ -34,7 +34,7 @@ public class FindDaoMethodGenerator extends AbstractDaoMethodGenerator {
 
     @Override
     protected String getMethodType(GeneratorContext generatorContext) {
-        return DaoMethod.Type.QUERY;
+        return DaoMethod.MethodType.QUERY;
     }
 
     @Override

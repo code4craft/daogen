@@ -36,11 +36,11 @@ public class DaoGen {
         String daoPathname = sourcePath + project.getDaoPackage().replaceAll("\\.", "/");
         File daoFilePath = new File(daoPathname);
         FileUtils.forceMkdir(daoFilePath);
-        writeFile(daoPathname + "/" + generatorContext.getDao().getTypeName() + ".java", new FreeMarkerRenderer(FreemarkerWrapper.getInstance().getTemplate("templates/dao/avatardao.ftl")).render(generatorContext));
+        writeFile(daoPathname + "/" + generatorContext.getDao().getType().getName() + ".java", new FreeMarkerRenderer(FreemarkerWrapper.getInstance().getTemplate("templates/dao/avatardao.ftl")).render(generatorContext));
         String entityPathName = sourcePath + project.getEntityPackage().replaceAll("\\.", "/");
         File entityFilePath = new File(entityPathName);
         FileUtils.forceMkdir(entityFilePath);
-        writeFile(entityFilePath + "/" + generatorContext.getEntity().getTypeName() + ".java",
+        writeFile(entityFilePath + "/" + generatorContext.getModel().getName() + ".java",
                 new FreeMarkerRenderer(FreemarkerWrapper.getInstance().getTemplate("templates/model/entity.ftl")).render(generatorContext));
 
         String resourcePath = project.getOutputDir() + "src/main/resources/" + project.getSqlMapPath();
@@ -52,7 +52,7 @@ public class DaoGen {
         String testDaoPathname = project.getOutputDir() + "src/test/java/" + project.getDaoPackage().replaceAll("\\.", "/");
         File testDaoFilePath = new File(testDaoPathname);
         FileUtils.forceMkdir(testDaoFilePath);
-        writeFile(testDaoPathname + "/" + generatorContext.getDao().getTypeName() + "Test.java",
+        writeFile(testDaoPathname + "/" + generatorContext.getDao().getType().getName() + "Test.java",
                 new FreeMarkerRenderer(FreemarkerWrapper.getInstance().getTemplate("templates/test/daotest.ftl")).render(generatorContext));
 
         System.out.println(new FreeMarkerRenderer(FreemarkerWrapper.getInstance().getTemplate("templates/spring/dao.ftl")).render(generatorContext));

@@ -17,7 +17,6 @@ public abstract class AbstractDaoMethodGenerator implements DaoMethodGenerator {
     @Override
     public DaoMethod generate(GeneratorContext generatorContext) {
         DaoMethod daoMethod = new DaoMethod();
-        daoMethod.setEntity(generatorContext.getEntity());
         daoMethod.setName(getMethodName());
         daoMethod.setType(getMethodType(generatorContext));
         daoMethod.setParams(getMethodParams(generatorContext));

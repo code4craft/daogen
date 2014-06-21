@@ -41,8 +41,8 @@ public class Imports {
     public Imports merge(List<? extends Type> types) {
         Set<String> mergedImportSet = this.getImports();
         for (Type type : types) {
-            if (needImport(type.getTypeFullName())) {
-                mergedImportSet.add(type.getTypeFullName());
+            if (needImport(type.getFullName())) {
+                mergedImportSet.add(type.getFullName());
             }
         }
         return this;
@@ -51,8 +51,8 @@ public class Imports {
     public static Imports create(List<? extends Type> types){
         Set<String> mergedImportSet = new LinkedHashSet<String>();
         for (Type type : types) {
-            if (needImport(type.getTypeFullName())) {
-                mergedImportSet.add(type.getTypeFullName());
+            if (needImport(type.getFullName())) {
+                mergedImportSet.add(type.getFullName());
             }
         }
         return new Imports(mergedImportSet);

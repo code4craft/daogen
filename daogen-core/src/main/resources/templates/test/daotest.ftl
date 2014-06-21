@@ -1,4 +1,4 @@
-package ${dao.pkg};
+package ${dao.type.pkg};
 
 import com.dianping.tuangou.navi.dal.dao.test.AbstractDAOTest;
 import org.junit.Before;
@@ -8,28 +8,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-<#assign typeUtils = map.typeUtils>
-<#assign daoname = dao.typeName?uncap_first>
-<#assign entityname = model.name?uncap_first>
+<#assign daoname = dao.type.name?uncap_first>
+<#assign modelname = model.name?uncap_first>
 /**
 *
 * Create by daogen http://code.dianpingoa.com/yihua.huang/daogen/
 *
 * @author yihua.huang@dianping.com
 */
-public class ${dao.typeName}Test extends AbstractDAOTest {
+public class ${dao.type.name}Test extends AbstractDAOTest {
 
 	@Autowired
-	private ${dao.typeName} ${daoname};
+	private ${dao.type.name} ${daoname};
 <#list dao.methods as daomethod><#if daomethod.type == "INSERT"><#assign hasInsert=true></#if></#list><#if hasInsert?exists>
 
-	private ${entity.typeName} ${entityname};
+	private ${model.type.name} ${modelname};
 
 	@Before
 	public void setup() {
-        ${entityname} = new ${entity.typeName}();
+        ${modelname} = new ${model.type.name}();
         <#list model.fields as field>
-        ${entityname}.set${field.name?cap_first}(${typeUtils.getSuggestValue(field.typeOriginName)});
+        ${modelname}.set${field.name?cap_first}(${field.type.suggestValue});
         </#list>
 	}
 
@@ -38,19 +37,19 @@ public class ${dao.typeName}Test extends AbstractDAOTest {
     @Test
     public void test${daomethod.name?cap_first}() {
 <#if daomethod.type == "INSERT">
-        ${daoname}.${daomethod.name}(${entityname});
+        ${daoname}.${daomethod.name}(${modelname});
 </#if>
     <#if daomethod.type == "LOAD">
-        ${daoname}.${daomethod.name}(<#list daomethod.params as param>${typeUtils.getSuggestValue(param.type.typeOriginName)}<#if (param_index+1) < daomethod.params?size>, </#if></#list>);
+        ${daoname}.${daomethod.name}(<#list daomethod.params as param>${param.type.suggestValue}<#if (param_index+1) < daomethod.params?size>, </#if></#list>);
     </#if>
     <#if daomethod.name == "findByStartId">
-        List<${entity.typeName}> ${entityname}s = ${daoname}.${daomethod.name}(<#list daomethod.params as param>${typeUtils.getSuggestValue(param.type.typeOriginName)}<#if (param_index+1) < daomethod.params?size>, </#if></#list>);
-        assertThat(${entityname}s).isNotNull();
+        List<${entity.typeName}> ${modelname}s = ${daoname}.${daomethod.name}(<#list daomethod.params as param>${param.type.suggestValue}<#if (param_index+1) < daomethod.params?size>, </#if></#list>);
+        assertThat(${modelname}s).isNotNull();
     <#elseif daomethod.name == "findByIds">
         List<${daomethod.params[0].type.typeName}> ${daomethod.params[0].name} = new java.util.ArrayList<${daomethod.params[0].type.typeName}>();
         ${daomethod.params[0].name}.add(${typeUtils.getSuggestValue(daomethod.params[0].type.typeOriginName)});
-        List<${entity.typeName}> ${entityname}s = ${daoname}.${daomethod.name}(${daomethod.params[0].name});
-        assertThat(${entityname}s).isNotNull();
+        List<${entity.typeName}> ${modelname}s = ${daoname}.${daomethod.name}(${daomethod.params[0].name});
+        assertThat(${modelname}s).isNotNull();
     </#if>
     }
 </#list>

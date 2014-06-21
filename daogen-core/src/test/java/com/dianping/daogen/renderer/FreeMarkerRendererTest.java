@@ -33,4 +33,12 @@ public class FreeMarkerRendererTest extends AbstractRendererTest {
         String output = freeMarkerRenderer.render(context);
         System.out.println(output);
     }
+
+    @Test
+    public void testDaoTest() throws Exception {
+        FreeMarkerRenderer freeMarkerRenderer = new FreeMarkerRenderer(FreemarkerWrapper.getInstance().getTemplate("templates/test/daotest.ftl"));
+        GeneratorContext context = getContext();
+        String output = freeMarkerRenderer.render(context);
+        System.out.println(output);
+    }
 }

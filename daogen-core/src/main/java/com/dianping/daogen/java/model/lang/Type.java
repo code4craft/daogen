@@ -1,5 +1,6 @@
 package com.dianping.daogen.java.model.lang;
 
+import com.dianping.daogen.utils.TypeUtils;
 import lombok.Data;
 
 /**
@@ -11,34 +12,38 @@ public class Type {
     public Type() {
     }
 
-    public Type(String typeOriginName) {
-        this.typeOriginName = typeOriginName;
+    public Type(String originName) {
+        this.originName = originName;
     }
 
-    private String typeOriginName;
+    private String originName;
 
-    public String getTypeFullName() {
-        if (typeOriginName.contains(".")) {
-            return typeOriginName;
+    public String getFullName() {
+        if (originName.contains(".")) {
+            return originName;
         } else {
             return null;
         }
     }
 
     public String getPkg() {
-        if (typeOriginName.contains(".")) {
-            return typeOriginName.substring(0, typeOriginName.lastIndexOf("."));
+        if (originName.contains(".")) {
+            return originName.substring(0, originName.lastIndexOf("."));
         } else {
             return null;
         }
     }
 
-    public String getTypeName() {
-        if (typeOriginName.contains(".")) {
-            return typeOriginName.substring(typeOriginName.lastIndexOf(".")+1);
+    public String getName() {
+        if (originName.contains(".")) {
+            return originName.substring(originName.lastIndexOf(".")+1);
         } else {
-            return typeOriginName;
+            return originName;
         }
+    }
+
+    public String getSuggestValue(){
+        return TypeUtils.getSuggestValue(getOriginName());
     }
 
     public static Type INT = new Type(Integer.TYPE.getName());

@@ -1,4 +1,4 @@
-package ${dao.pkg};
+package ${dao.type.pkg};
 
 import com.dianping.avatar.dao.GenericDao;
 import com.dianping.avatar.dao.annotation.DAOAction;
@@ -11,11 +11,11 @@ import com.dianping.avatar.dao.annotation.DAOParam;
 *
 * @author yihua.huang@dianping.com
 */
-public interface ${dao.typeName} extends GenericDao {
+public interface ${dao.type.name} extends GenericDao {
 
 <#list dao.methods as method>
     @DAOAction(action = DAOActionType.${method.type})
-    <#if method.returnCollection?exists>${method.returnCollection}<${method.returnType.typeName}><#else>${method.returnType.typeName}</#if> ${method.name}(<#list method.params as param>@DAOParam("${param.name}") <#if param.multi>List<${param.type.typeName}><#else>${param.type.typeName}</#if> ${param.name}<#if (param_index+1) < method.params?size>, </#if></#list>);
+    <#if method.returnCollection?exists>${method.returnCollection}<${method.returnType.name}><#else>${method.returnType.name}</#if> ${method.name}(<#list method.params as param>@DAOParam("${param.name}") <#if param.multi>List<${param.type.name}><#else>${param.type.name}</#if> ${param.name}<#if (param_index+1) < method.params?size>, </#if></#list>);
 
 </#list>
 }

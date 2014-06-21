@@ -4,7 +4,6 @@ import com.dianping.daogen.config.Project;
 import com.dianping.daogen.db.model.Table;
 import com.dianping.daogen.java.model.dao.Dao;
 import com.dianping.daogen.java.model.dao.Model;
-import com.dianping.daogen.java.model.lang.Type;
 import lombok.Data;
 
 import java.util.HashMap;
@@ -16,11 +15,9 @@ import java.util.Map;
 @Data
 public class GeneratorContext {
 
-    private Model model;
-
     private Table table;
 
-    private Type entity;
+    private Model model;
 
     private Dao dao;
 

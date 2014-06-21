@@ -9,9 +9,11 @@ import java.util.List;
  * @author code4crafer@gmail.com
  */
 @Data
-public class Dao extends Type {
+public class Dao {
 
     private List<DaoMethod> methods;
+
+    private Type type;
 
     //insert
     //update

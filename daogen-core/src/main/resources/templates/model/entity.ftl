@@ -1,4 +1,4 @@
-package ${entity.pkg};
+package ${model.type.pkg};
 
 import lombok.Data;
 
@@ -11,7 +11,7 @@ import lombok.Data;
 * @author yihua.huang@dianping.com
 */
 @Data
-public class ${entity.typeName} {
+public class ${model.type.name} {
 
 <#list model.fields as field>
     <#if field.column.comment?exists>
@@ -19,7 +19,7 @@ public class ${entity.typeName} {
     * ${field.column.comment}
     */
     </#if>
-    private ${field.type.typeName} ${field.name};
+    private ${field.type.name} ${field.name};
 
 </#list>
 }

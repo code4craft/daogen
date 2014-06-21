@@ -24,13 +24,13 @@ public class InsertDaoMethodGenerator extends AbstractDaoMethodGenerator {
         Model model = generatorContext.getModel();
         DaoMethod.Param param = new DaoMethod.Param();
         param.setName(StringUtils.uncapitalize(model.getName()));
-        param.setType(generatorContext.getEntity());
+        param.setType(generatorContext.getModel().getType());
         return Collections.singletonList(param);
     }
 
     @Override
     protected String getMethodType(GeneratorContext generatorContext) {
-        return DaoMethod.Type.INSERT;
+        return DaoMethod.MethodType.INSERT;
     }
 
     @Override

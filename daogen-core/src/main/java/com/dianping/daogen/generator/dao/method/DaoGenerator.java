@@ -8,6 +8,7 @@ import com.dianping.daogen.generator.dao.method.impl.InsertDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
 import com.dianping.daogen.java.model.dao.Dao;
 import com.dianping.daogen.java.model.dao.DaoMethod;
+import com.dianping.daogen.java.model.lang.Type;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -69,7 +70,7 @@ public class DaoGenerator implements Generator<Dao> {
             daoMethods.add(daoMethod);
         }
         dao.setMethods(daoMethods);
-        dao.setTypeOriginName(pkg + "." + generatorContext.getModel().getName() + "Dao");
+        dao.setType(new Type(pkg + "." + generatorContext.getModel().getName() + "Dao"));
         return dao;
     }
 
