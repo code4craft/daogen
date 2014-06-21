@@ -1,6 +1,6 @@
 package com.dianping.daogen.java.file;
 
-import com.dianping.daogen.java.model.lang.Type;
+import com.dianping.daogen.java.model.lang.runtime.Type;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

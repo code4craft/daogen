@@ -4,8 +4,8 @@ import com.dianping.daogen.GeneratorContext;
 import com.dianping.daogen.db.model.Column;
 import com.dianping.daogen.java.model.dao.DaoMethod;
 import com.dianping.daogen.generator.dao.method.DaoMethodGenerator;
-import com.dianping.daogen.java.model.lang.Field;
-import com.dianping.daogen.java.model.lang.Type;
+import com.dianping.daogen.java.model.lang.runtime.Field;
+import com.dianping.daogen.java.model.lang.runtime.Type;
 
 import java.util.List;
 

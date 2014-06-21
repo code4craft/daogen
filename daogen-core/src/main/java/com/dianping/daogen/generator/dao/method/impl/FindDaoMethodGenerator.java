@@ -2,8 +2,8 @@ package com.dianping.daogen.generator.dao.method.impl;
 
 import com.dianping.daogen.GeneratorContext;
 import com.dianping.daogen.java.model.dao.DaoMethod;
-import com.dianping.daogen.java.model.lang.Type;
-import com.dianping.daogen.java.model.lang.Field;
+import com.dianping.daogen.java.model.lang.runtime.Type;
+import com.dianping.daogen.java.model.lang.runtime.Field;
 import com.dianping.daogen.utils.TypeUtils;
 import org.apache.commons.lang3.StringUtils;
 

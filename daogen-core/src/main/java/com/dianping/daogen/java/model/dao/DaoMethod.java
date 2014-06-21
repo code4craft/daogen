@@ -1,7 +1,7 @@
 package com.dianping.daogen.java.model.dao;
 
 import com.dianping.daogen.db.model.Column;
-import com.dianping.daogen.java.model.lang.Type;
+import com.dianping.daogen.java.model.lang.runtime.Type;
 import lombok.Data;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.dianping.daogen.java.model.lang;
+package com.dianping.daogen.java.model.lang.runtime;
 
 import com.dianping.daogen.utils.TypeUtils;
 import lombok.Data;

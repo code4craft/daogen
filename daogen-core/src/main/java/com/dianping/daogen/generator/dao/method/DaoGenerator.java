@@ -8,7 +8,7 @@ import com.dianping.daogen.generator.dao.method.impl.InsertDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
 import com.dianping.daogen.java.model.dao.Dao;
 import com.dianping.daogen.java.model.dao.DaoMethod;
-import com.dianping.daogen.java.model.lang.Type;
+import com.dianping.daogen.java.model.lang.runtime.Type;
 import lombok.Getter;
 import lombok.Setter;
 

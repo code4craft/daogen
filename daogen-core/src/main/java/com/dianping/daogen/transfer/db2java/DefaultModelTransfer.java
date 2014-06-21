@@ -2,7 +2,7 @@ package com.dianping.daogen.transfer.db2java;
 
 import com.dianping.daogen.GeneratorContext;
 import com.dianping.daogen.db.model.Table;
-import com.dianping.daogen.java.model.lang.Field;
+import com.dianping.daogen.java.model.lang.runtime.Field;
 import com.dianping.daogen.java.model.dao.Model;
 import com.dianping.daogen.transfer.model.EntityColumn;
 import lombok.Getter;

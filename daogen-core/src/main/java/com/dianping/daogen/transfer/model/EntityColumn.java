@@ -1,7 +1,7 @@
 package com.dianping.daogen.transfer.model;
 
 import com.dianping.daogen.db.model.Column;
-import com.dianping.daogen.java.model.lang.Field;
+import com.dianping.daogen.java.model.lang.runtime.Field;
 import lombok.Getter;
 import lombok.Setter;
 
