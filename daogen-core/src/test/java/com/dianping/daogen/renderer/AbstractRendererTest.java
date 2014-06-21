@@ -32,13 +32,16 @@ public abstract class AbstractRendererTest {
         modelTransfer.setFieldTransfer(new DefaultFieldTransfer());
         Table table = new MysqlCreateTableParser().parse(sql);
         Model model = modelTransfer.transfer(table);
+        model.setTypeOriginName("com.dianping.entity."+model.getName());
         GeneratorContext generatorContext = new GeneratorContext();
         generatorContext.setModel(model);
+        generatorContext.setEntity(model);
         generatorContext.setTable(table);
         DaoGenerator daoGenerator = new DaoGenerator();
         InsertDaoMethodGenerator insertDaoMethodGenerator = new InsertDaoMethodGenerator();
         LoadDaoMethodGenerator loadDaoMethodGenerator = new LoadDaoMethodGenerator();
         daoGenerator.setMethodGenerators(com.google.common.collect.Lists.<DaoMethodGenerator>newArrayList(insertDaoMethodGenerator, loadDaoMethodGenerator));
+        daoGenerator.setPkg("com.dianping.dao");
         Dao dao = daoGenerator.generate(generatorContext);
         generatorContext.setDao(dao);
         return generatorContext;

@@ -24,6 +24,7 @@ public class InsertDaoMethodGenerator extends AbstractDaoMethodGenerator {
         Model model = generatorContext.getModel();
         DaoMethod.Param param = new DaoMethod.Param();
         param.setName(StringUtils.uncapitalize(model.getName()));
+        param.setType(generatorContext.getEntity());
         return Collections.singletonList(param);
     }
 
