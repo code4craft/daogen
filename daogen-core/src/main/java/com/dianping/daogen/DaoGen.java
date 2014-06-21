@@ -81,6 +81,7 @@ public class DaoGen {
         Model model = modelTransfer.transfer(table,generatorContext);
         generatorContext.setModel(model);
         generatorContext.setTable(table);
+        //type of model
         DaoGenerator daoGenerator = DaoGenerator.createByMethodNames(task.getMethods());
         daoGenerator.setPkg(project.getDaoPackage());
         Dao dao = daoGenerator.generate(generatorContext);

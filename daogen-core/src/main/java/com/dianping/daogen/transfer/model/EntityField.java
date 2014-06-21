@@ -2,16 +2,18 @@ package com.dianping.daogen.transfer.model;
 
 import com.dianping.daogen.db.model.Column;
 import com.dianping.daogen.java.model.lang.Field;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 带有Column关联的field<br/>
  *
  * @author code4crafer@gmail.com
  */
-@Data
 public class EntityField extends Field {
 
+    @Setter
+    @Getter
     private Column column;
 
     public EntityField(String name, String typeName, Column column) {

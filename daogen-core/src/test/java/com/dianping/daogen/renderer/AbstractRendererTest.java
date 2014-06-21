@@ -34,7 +34,7 @@ public abstract class AbstractRendererTest {
         Table table = new MysqlCreateTableParser().parse(sql);
         GeneratorContext generatorContext = new GeneratorContext();
         Model model = modelTransfer.transfer(table, generatorContext);
-        model.setType(new Type("com.dianping.entity." + model.getName()));
+        model.setType(new Type("com.dianping.entity." + model.getName() + "Entity"));
         generatorContext.setModel(model);
         generatorContext.setModel(model);
         generatorContext.setTable(table);
