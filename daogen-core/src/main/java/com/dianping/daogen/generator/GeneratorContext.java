@@ -3,7 +3,6 @@ package com.dianping.daogen.generator;
 import com.dianping.daogen.config.Project;
 import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.generator.entity.Entity;
-import com.dianping.daogen.generator.sqlmap.SqlMap;
 import com.dianping.daogen.model.db.Table;
 import com.dianping.daogen.model.java.Model;
 import lombok.Data;
@@ -24,8 +23,6 @@ public class GeneratorContext {
     private Entity entity;
 
     private Dao dao;
-
-    private SqlMap sqlMap;
 
     private Project project;
 
