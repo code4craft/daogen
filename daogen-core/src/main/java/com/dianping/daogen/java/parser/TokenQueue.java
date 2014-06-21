@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 public class TokenQueue {
     private String queue;
     private int pos = 0;
+    private int mark = 0;
 
     private static final char ESC = '\\'; // escape char for chomp balanced.
 
@@ -117,6 +118,18 @@ public class TokenQueue {
                 return true;
         }
         return false;
+    }
+
+    public int mark() {
+        int markTemp = mark;
+        mark = pos;
+        return markTemp;
+    }
+
+    public String getStringMarkToPos() {
+        String substring = queue.substring(mark, pos);
+        mark = pos;
+        return substring;
     }
 
     public boolean matchesAny(char... seq) {
