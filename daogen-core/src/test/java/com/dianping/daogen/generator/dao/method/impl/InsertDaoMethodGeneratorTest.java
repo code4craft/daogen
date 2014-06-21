@@ -1,8 +1,8 @@
 package com.dianping.daogen.generator.dao.method.impl;
 
 import com.dianping.daogen.generator.AbstractGeneratorTest;
-import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.java.model.DaoMethod;
+import com.dianping.daogen.GeneratorContext;
+import com.dianping.daogen.java.model.dao.DaoMethod;
 import org.junit.Test;
 
 /**

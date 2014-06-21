@@ -1,10 +1,10 @@
-package com.dianping.daogen.generator;
+package com.dianping.daogen;
 
 import com.dianping.daogen.config.Project;
 import com.dianping.daogen.db.model.Table;
-import com.dianping.daogen.java.model.Dao;
-import com.dianping.daogen.java.model.Model;
-import com.dianping.daogen.java.model.Type;
+import com.dianping.daogen.java.model.dao.Dao;
+import com.dianping.daogen.java.model.dao.Model;
+import com.dianping.daogen.java.model.lang.Type;
 import lombok.Data;
 
 import java.util.HashMap;

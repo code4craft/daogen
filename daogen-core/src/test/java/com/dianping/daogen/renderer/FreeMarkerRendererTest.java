@@ -1,6 +1,6 @@
 package com.dianping.daogen.renderer;
 
-import com.dianping.daogen.generator.GeneratorContext;
+import com.dianping.daogen.GeneratorContext;
 import com.dianping.daogen.render.FreeMarkerRenderer;
 import com.dianping.daogen.render.FreemarkerWrapper;
 import org.junit.Test;

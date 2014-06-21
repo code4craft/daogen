@@ -1,5 +1,6 @@
-package com.dianping.daogen.java.model;
+package com.dianping.daogen.java.model.dao;
 
+import com.dianping.daogen.java.model.lang.Type;
 import lombok.Data;
 
 import java.util.List;

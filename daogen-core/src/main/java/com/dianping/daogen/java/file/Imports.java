@@ -1,6 +1,6 @@
-package com.dianping.daogen.import_organize;
+package com.dianping.daogen.java.file;
 
-import com.dianping.daogen.java.model.Type;
+import com.dianping.daogen.java.model.lang.Type;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

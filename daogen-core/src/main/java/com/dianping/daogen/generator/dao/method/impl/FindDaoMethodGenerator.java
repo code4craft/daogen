@@ -1,9 +1,9 @@
 package com.dianping.daogen.generator.dao.method.impl;
 
-import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.java.model.DaoMethod;
-import com.dianping.daogen.java.model.Type;
-import com.dianping.daogen.java.model.Field;
+import com.dianping.daogen.GeneratorContext;
+import com.dianping.daogen.java.model.dao.DaoMethod;
+import com.dianping.daogen.java.model.lang.Type;
+import com.dianping.daogen.java.model.lang.Field;
 import com.dianping.daogen.utils.TypeUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -25,7 +25,7 @@ public class FindDaoMethodGenerator extends AbstractDaoMethodGenerator {
         DaoMethod.Param param = new DaoMethod.Param();
         Field primaryField = getPrimaryField(generatorContext);
         param.setName(StringUtils.uncapitalize(primaryField.getName())+"s");
-        param.setType(new Type(TypeUtils.getBoxedType(primaryField.getTypeOriginName())));
+        param.setType(new Type(TypeUtils.getBoxedType(primaryField.getType().getTypeOriginName())));
         param.setCondition(true);
         param.setMulti(true);
         param.setColumn(getPrimaryColumn(generatorContext));

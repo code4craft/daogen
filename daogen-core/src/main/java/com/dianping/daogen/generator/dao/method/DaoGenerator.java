@@ -1,13 +1,13 @@
 package com.dianping.daogen.generator.dao.method;
 
 import com.dianping.daogen.generator.Generator;
-import com.dianping.daogen.generator.GeneratorContext;
+import com.dianping.daogen.GeneratorContext;
 import com.dianping.daogen.generator.dao.method.impl.FindByStartDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.FindDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.InsertDaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
-import com.dianping.daogen.java.model.Dao;
-import com.dianping.daogen.java.model.DaoMethod;
+import com.dianping.daogen.java.model.dao.Dao;
+import com.dianping.daogen.java.model.dao.DaoMethod;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,4 +1,4 @@
-package com.dianping.daogen.java.model;
+package com.dianping.daogen.java.model.lang;
 
 import lombok.Data;
 

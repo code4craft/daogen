@@ -1,6 +1,6 @@
 package com.dianping.daogen.transfer.db2java;
 
-import com.dianping.daogen.generator.GeneratorContext;
+import com.dianping.daogen.GeneratorContext;
 import com.dianping.daogen.transfer.model.EntityColumn;
 import com.dianping.daogen.transfer.model.EntityField;
 import org.apache.commons.lang3.StringUtils;

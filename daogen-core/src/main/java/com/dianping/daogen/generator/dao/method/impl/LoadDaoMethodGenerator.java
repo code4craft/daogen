@@ -1,10 +1,10 @@
 package com.dianping.daogen.generator.dao.method.impl;
 
-import com.dianping.daogen.generator.GeneratorContext;
+import com.dianping.daogen.GeneratorContext;
 import com.dianping.daogen.db.model.Column;
-import com.dianping.daogen.java.model.DaoMethod;
-import com.dianping.daogen.java.model.Type;
-import com.dianping.daogen.java.model.Field;
+import com.dianping.daogen.java.model.dao.DaoMethod;
+import com.dianping.daogen.java.model.lang.Type;
+import com.dianping.daogen.java.model.lang.Field;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collections;
@@ -26,7 +26,7 @@ public class LoadDaoMethodGenerator extends AbstractDaoMethodGenerator {
         Column primaryKey = getPrimaryColumn(generatorContext);
         Field primaryField = getPrimaryField(generatorContext);
         param.setName(StringUtils.uncapitalize(primaryField.getName()));
-        param.setType(primaryField);
+        param.setType(primaryField.getType());
         param.setCondition(true);
         param.setColumn(primaryKey);
         return Collections.singletonList(param);

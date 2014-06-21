@@ -1,5 +1,7 @@
 package com.dianping.daogen.generator;
 
+import com.dianping.daogen.GeneratorContext;
+
 /**
  * @author code4crafer@gmail.com
  */

@@ -1,6 +1,6 @@
 package com.dianping.daogen.render;
 
-import com.dianping.daogen.generator.GeneratorContext;
+import com.dianping.daogen.GeneratorContext;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 

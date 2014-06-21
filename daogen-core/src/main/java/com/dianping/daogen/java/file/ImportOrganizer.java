@@ -1,6 +1,6 @@
-package com.dianping.daogen.import_organize;
+package com.dianping.daogen.java.file;
 
-import com.dianping.daogen.java.model.Type;
+import com.dianping.daogen.java.model.lang.Type;
 import com.dianping.daogen.utils.ObjectTraversal;
 import com.dianping.daogen.utils.ObjectVisitor;
 

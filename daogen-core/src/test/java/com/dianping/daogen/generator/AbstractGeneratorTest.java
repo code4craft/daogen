@@ -1,8 +1,9 @@
 package com.dianping.daogen.generator;
 
+import com.dianping.daogen.GeneratorContext;
 import com.dianping.daogen.db.parser.MysqlCreateTableParser;
 import com.dianping.daogen.db.model.Table;
-import com.dianping.daogen.java.model.Model;
+import com.dianping.daogen.java.model.dao.Model;
 import com.dianping.daogen.transfer.db2java.DefaultFieldTransfer;
 import com.dianping.daogen.transfer.db2java.DefaultModelTransfer;
 

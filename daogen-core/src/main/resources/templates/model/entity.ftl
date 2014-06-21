@@ -19,7 +19,7 @@ public class ${entity.typeName} {
     * ${field.column.comment}
     */
     </#if>
-    private ${field.typeName} ${field.name};
+    private ${field.type.typeName} ${field.name};
 
 </#list>
 }
