@@ -5,12 +5,6 @@ import com.dianping.avatar.dao.annotation.DAOAction;
 import com.dianping.avatar.dao.annotation.DAOActionType;
 import com.dianping.avatar.dao.annotation.DAOParam;
 
-<#if dao.imports.imports?has_content>
-    <#list dao.imports.imports as imp>
-import ${imp};
-    </#list>
-</#if>
-
 /**
 *
 * Create by daogen http://code.dianpingoa.com/yihua.huang/daogen/

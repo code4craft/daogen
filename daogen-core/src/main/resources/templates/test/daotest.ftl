@@ -1,17 +1,10 @@
 package ${dao.pkg};
 
-import ${entity.typeFullName};
 import com.dianping.tuangou.navi.dal.dao.test.AbstractDAOTest;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
-
-<#if dao.imports.imports?has_content>
-    <#list dao.imports.imports as imp>
-import ${imp};
-    </#list>
-</#if>
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -1,11 +1,6 @@
 package ${entity.pkg};
 
 import lombok.Data;
-<#if entity.imports.imports?has_content>
-    <#list entity.imports.imports as imp>
-import ${imp};
-    </#list>
-</#if>
 
 /**
 *
