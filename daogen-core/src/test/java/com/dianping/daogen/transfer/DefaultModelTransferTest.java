@@ -1,6 +1,7 @@
 package com.dianping.daogen.transfer;
 
-import com.dianping.daogen.parser.MysqlCreateTableParser;
+import com.dianping.daogen.generator.GeneratorContext;
+import com.dianping.daogen.parser.db.MysqlCreateTableParser;
 import com.dianping.daogen.model.db.Table;
 import com.dianping.daogen.model.java.Model;
 import org.junit.Before;
@@ -32,7 +33,7 @@ public class DefaultModelTransferTest {
     @Test
     public void testTransfer() throws Exception {
         Table table = new MysqlCreateTableParser().parse(sql);
-        Model model = modelTransfer.transfer(table);
+        Model model = modelTransfer.transfer(table,new GeneratorContext());
         System.out.println(model);
     }
 }

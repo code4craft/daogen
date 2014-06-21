@@ -1,5 +1,6 @@
 package com.dianping.daogen.transfer;
 
+import com.dianping.daogen.generator.GeneratorContext;
 import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.model.java.Field;
 import org.apache.commons.lang3.StringUtils;
@@ -18,7 +19,7 @@ public class DefaultFieldTransfer implements FieldTransfer {
     }};
 
     @Override
-    public Field transfer(Column column) {
+    public Field transfer(Column column, GeneratorContext generatorContext) {
         if (ignoreColumns.contains(column.getName())) {
             return null;
         }

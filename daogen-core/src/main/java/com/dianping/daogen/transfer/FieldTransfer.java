@@ -1,5 +1,6 @@
 package com.dianping.daogen.transfer;
 
+import com.dianping.daogen.generator.GeneratorContext;
 import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.model.java.Field;
 
@@ -8,5 +9,5 @@ import com.dianping.daogen.model.java.Field;
  */
 public interface FieldTransfer {
 
-    public Field transfer(Column column);
+    public Field transfer(Column column, GeneratorContext generatorContext);
 }

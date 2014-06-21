@@ -1,5 +1,6 @@
 package com.dianping.daogen.transfer;
 
+import com.dianping.daogen.generator.GeneratorContext;
 import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.model.db.Table;
 import com.dianping.daogen.model.java.Field;
@@ -25,16 +26,17 @@ public class DefaultModelTransfer implements ModelTransfer {
     private FieldTransfer fieldTransfer;
 
     @Override
-    public Model transfer(Table table) {
+    public Model transfer(Table table, GeneratorContext generatorContext) {
         String tableName = table.getName();
         if (removePrefix) {
             tableName = StringUtils.removePattern(table.getName(), "[A-Za-z]+_");
         }
         List<Field> fieldList = new ArrayList<Field>();
         for (Column column : table.getColumns()) {
-            Field field = fieldTransfer.transfer(column);
+            Field field = fieldTransfer.transfer(column,generatorContext);
             if (field != null) {
                 fieldList.add(field);
+                generatorContext.getMappings().getFieldColumnMap().put(field.getName(), column);
             }
         }
         tableName = StringUtils.capitalize(tableName);

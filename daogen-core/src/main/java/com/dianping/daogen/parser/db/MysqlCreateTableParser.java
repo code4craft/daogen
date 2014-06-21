@@ -1,4 +1,4 @@
-package com.dianping.daogen.parser;
+package com.dianping.daogen.parser.db;
 
 import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.model.db.Table;

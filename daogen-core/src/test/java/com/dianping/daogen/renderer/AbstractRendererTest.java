@@ -8,7 +8,7 @@ import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
 import com.dianping.daogen.model.db.Table;
 import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.model.java.Model;
-import com.dianping.daogen.parser.MysqlCreateTableParser;
+import com.dianping.daogen.parser.db.MysqlCreateTableParser;
 import com.dianping.daogen.transfer.DefaultFieldTransfer;
 import com.dianping.daogen.transfer.DefaultModelTransfer;
 
@@ -31,9 +31,9 @@ public abstract class AbstractRendererTest {
         DefaultModelTransfer modelTransfer = new DefaultModelTransfer();
         modelTransfer.setFieldTransfer(new DefaultFieldTransfer());
         Table table = new MysqlCreateTableParser().parse(sql);
-        Model model = modelTransfer.transfer(table);
-        model.setTypeOriginName("com.dianping.entity."+model.getName());
         GeneratorContext generatorContext = new GeneratorContext();
+        Model model = modelTransfer.transfer(table, generatorContext);
+        model.setTypeOriginName("com.dianping.entity." + model.getName());
         generatorContext.setModel(model);
         generatorContext.setEntity(model);
         generatorContext.setTable(table);
@@ -44,6 +44,7 @@ public abstract class AbstractRendererTest {
         daoGenerator.setPkg("com.dianping.dao");
         Dao dao = daoGenerator.generate(generatorContext);
         generatorContext.setDao(dao);
+        generatorContext.getMap().put("nono", "nono");
         return generatorContext;
     }
 

@@ -1,6 +1,6 @@
 package com.dianping.daogen.generator;
 
-import com.dianping.daogen.parser.MysqlCreateTableParser;
+import com.dianping.daogen.parser.db.MysqlCreateTableParser;
 import com.dianping.daogen.model.db.Table;
 import com.dianping.daogen.model.java.Model;
 import com.dianping.daogen.transfer.DefaultFieldTransfer;
@@ -21,12 +21,12 @@ public abstract class AbstractGeneratorTest {
             "  PRIMARY KEY (`Id`)\n" +
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-    protected GeneratorContext getContext(){
+    protected GeneratorContext getContext() {
         DefaultModelTransfer modelTransfer = new DefaultModelTransfer();
         modelTransfer.setFieldTransfer(new DefaultFieldTransfer());
         Table table = new MysqlCreateTableParser().parse(sql);
-        Model model = modelTransfer.transfer(table);
         GeneratorContext generatorContext = new GeneratorContext();
+        Model model = modelTransfer.transfer(table, generatorContext);
         generatorContext.setModel(model);
         generatorContext.setTable(table);
         return generatorContext;
