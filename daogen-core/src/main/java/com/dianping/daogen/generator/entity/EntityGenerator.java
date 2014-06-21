@@ -2,7 +2,7 @@ package com.dianping.daogen.generator.entity;
 
 import com.dianping.daogen.generator.Generator;
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.importOrganize.Imports;
+import com.dianping.daogen.import_organize.Imports;
 import com.dianping.daogen.model.java.Model;
 import lombok.Getter;
 import lombok.Setter;

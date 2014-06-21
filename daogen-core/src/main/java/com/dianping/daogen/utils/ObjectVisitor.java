@@ -5,5 +5,5 @@ package com.dianping.daogen.utils;
  */
 public interface ObjectVisitor {
 
-    public void visit(Object object);
+    public void visit(String name, Object object);
 }

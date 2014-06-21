@@ -27,22 +27,29 @@ public class ObjectTraversal {
 
     private Set<Object> visitedObjects = new HashSet<Object>();
 
-    public void traverse(Object object) {
+    /**
+     * @param name   key
+     * @param object
+     */
+    public void traverse(String name, Object object) {
         for (ObjectVisitor objectVisitor : objectVisitors) {
-            objectVisitor.visit(object);
+            objectVisitor.visit(name, object);
         }
         if (!visitedObjects.add(object)) {
             return;
         }
         if (object instanceof Iterable) {
+            int index = 0;
             for (Object subObject : (Iterable) object) {
-                traverse(subObject);
+                traverse(String.format("%s[%d]", name, index), subObject);
             }
         } else if (object instanceof Map) {
             Set<Map.Entry> entrySet = ((Map) object).entrySet();
+            int index = 0;
             for (Map.Entry entry : entrySet) {
-                traverse(entry.getKey());
-                traverse(entry.getValue());
+                traverse(String.format("%s[k][%d]", name, index), entry.getKey());
+                traverse(String.format("%s[v][%d]", name, index), entry.getValue());
+                index++;
             }
         } else if (object.getClass().getName().startsWith("java")
                 || object.getClass().getName().startsWith("javax")
@@ -55,7 +62,7 @@ public class ObjectTraversal {
                     if (!Modifier.isStatic(declaredField.getModifiers())) {
                         Object field = declaredField.get(object);
                         if (field != null) {
-                            traverse(field);
+                            traverse(declaredField.getName(), field);
                         }
                     }
                 } catch (IllegalAccessException e) {

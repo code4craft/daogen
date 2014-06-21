@@ -1,5 +1,6 @@
 package com.dianping.daogen.utils;
 
+import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.model.java.Field;
 import org.junit.Test;
 
@@ -10,13 +11,14 @@ public class ObjectTraversalTest {
 
     @Test
     public void testTraverse() throws Exception {
-        Field field = new Field("name", "typeName", null);
+        Column column = new Column("C1", "int", false, "test");
+        Field field = new Field("name", "typeName", column);
         ObjectTraversal objectTraversal = new ObjectTraversal(new ObjectVisitor() {
             @Override
-            public void visit(Object object) {
-                System.out.println("Value:"+object);
+            public void visit(String name, Object object) {
+                System.out.println(name + ":" + object);
             }
         });
-        objectTraversal.traverse(field);
+        objectTraversal.traverse("Object", field);
     }
 }
