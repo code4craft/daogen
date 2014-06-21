@@ -1,7 +1,7 @@
 package com.dianping.daogen.renderer;
 
 import com.dianping.daogen.generator.GeneratorContext;
-import com.dianping.daogen.generator.dao.Dao;
+import com.dianping.daogen.model.java.Dao;
 import com.dianping.daogen.generator.dao.method.DaoGenerator;
 import com.dianping.daogen.generator.dao.method.DaoMethodGenerator;
 import com.dianping.daogen.generator.dao.method.impl.InsertDaoMethodGenerator;
@@ -9,8 +9,8 @@ import com.dianping.daogen.generator.dao.method.impl.LoadDaoMethodGenerator;
 import com.dianping.daogen.generator.entity.Entity;
 import com.dianping.daogen.generator.entity.EntityGenerator;
 import com.dianping.daogen.parser.MysqlCreateTableParser;
-import com.dianping.daogen.schema.db.Table;
-import com.dianping.daogen.schema.java.Model;
+import com.dianping.daogen.model.db.Table;
+import com.dianping.daogen.model.java.Model;
 import com.dianping.daogen.transfer.DefaultFieldTransfer;
 import com.dianping.daogen.transfer.DefaultModelTransfer;
 

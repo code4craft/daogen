@@ -1,5 +1,6 @@
-package com.dianping.daogen.javamodel;
+package com.dianping.daogen.model.java;
 
+import com.dianping.daogen.importOrganize.Imports;
 import lombok.Data;
 
 /**

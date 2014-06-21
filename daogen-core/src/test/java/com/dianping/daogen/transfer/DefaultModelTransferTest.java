@@ -1,8 +1,8 @@
 package com.dianping.daogen.transfer;
 
 import com.dianping.daogen.parser.MysqlCreateTableParser;
-import com.dianping.daogen.schema.db.Table;
-import com.dianping.daogen.schema.java.Model;
+import com.dianping.daogen.model.db.Table;
+import com.dianping.daogen.model.java.Model;
 import org.junit.Before;
 import org.junit.Test;
 

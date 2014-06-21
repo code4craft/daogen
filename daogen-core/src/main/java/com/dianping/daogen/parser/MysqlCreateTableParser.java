@@ -1,7 +1,7 @@
 package com.dianping.daogen.parser;
 
-import com.dianping.daogen.schema.db.Column;
-import com.dianping.daogen.schema.db.Table;
+import com.dianping.daogen.model.db.Column;
+import com.dianping.daogen.model.db.Table;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

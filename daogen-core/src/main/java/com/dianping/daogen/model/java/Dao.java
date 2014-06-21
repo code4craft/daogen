@@ -1,7 +1,5 @@
-package com.dianping.daogen.generator.dao;
+package com.dianping.daogen.model.java;
 
-import com.dianping.daogen.generator.dao.method.DaoMethod;
-import com.dianping.daogen.javamodel.Clazz;
 import lombok.Data;
 
 import java.util.List;

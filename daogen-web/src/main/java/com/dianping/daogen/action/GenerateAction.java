@@ -6,7 +6,7 @@ import com.dianping.daogen.config.Task;
 import com.dianping.daogen.generator.GeneratorContext;
 import com.dianping.daogen.render.FreeMarkerRenderer;
 import com.dianping.daogen.render.FreemarkerWrapper;
-import com.dianping.daogen.schema.java.Model;
+import com.dianping.daogen.model.java.Model;
 import com.opensymphony.xwork2.ActionSupport;
 import lombok.Getter;
 import lombok.Setter;

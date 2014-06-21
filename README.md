@@ -1,4 +1,5 @@
-##daogen
+DaoGen
+========
 
 Dao generator for java.
 
@@ -6,7 +7,9 @@ Dao generator for java.
 
 ## 输入：
 
-create table
+1. Create table || Entity
+2. DaoMethod || DaoFile || SqlMap
+
 
 ## 输出：
 
@@ -14,10 +17,13 @@ Entity(with&without lombok)
 
 Dao(Add load find)
 
+SqlMap
+
+Test
+
 ## 流程
 
-parse==>
+Entity
 
-DBSchema
 
-ModelSchema
+

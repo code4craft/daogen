@@ -1,6 +1,6 @@
 package com.dianping.daogen.generator.entity;
 
-import com.dianping.daogen.javamodel.Clazz;
+import com.dianping.daogen.model.java.Clazz;
 import lombok.ToString;
 
 /**

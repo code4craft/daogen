@@ -1,7 +1,6 @@
-package com.dianping.daogen.schema.java;
+package com.dianping.daogen.model.java;
 
-import com.dianping.daogen.javamodel.Type;
-import com.dianping.daogen.schema.db.Column;
+import com.dianping.daogen.model.db.Column;
 import com.dianping.daogen.utils.TypeUtils;
 import lombok.Data;
 

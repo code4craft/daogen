@@ -14,6 +14,8 @@ public class Task {
 
     private List<String> methods;
 
+    private List<DaoMethodConfig> methodConfigs;
+
     private Project project;
 
 }

@@ -1,7 +1,7 @@
 package com.dianping.daogen.transfer;
 
-import com.dianping.daogen.schema.db.Column;
-import com.dianping.daogen.schema.java.Field;
+import com.dianping.daogen.model.db.Column;
+import com.dianping.daogen.model.java.Field;
 import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;

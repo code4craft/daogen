@@ -1,4 +1,4 @@
-package com.dianping.daogen.schema.java;
+package com.dianping.daogen.model.java;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

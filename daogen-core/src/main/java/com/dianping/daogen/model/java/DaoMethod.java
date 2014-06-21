@@ -1,7 +1,7 @@
-package com.dianping.daogen.generator.dao.method;
+package com.dianping.daogen.model.java;
 
 import com.dianping.daogen.generator.entity.Entity;
-import com.dianping.daogen.schema.db.Column;
+import com.dianping.daogen.model.db.Column;
 import lombok.Data;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class DaoMethod {
 
     private Entity entity;
 
-    private com.dianping.daogen.javamodel.Type returnType;
+    private com.dianping.daogen.model.java.Type returnType;
 
     private String returnCollection;
 
@@ -37,13 +37,20 @@ public class DaoMethod {
     @Data
     public static class Param {
         private String name;
-        private com.dianping.daogen.javamodel.Type type;
+        private com.dianping.daogen.model.java.Type type;
         private boolean multi = false;
         /**
          * true: condition in where clause <br/>
          * false: in values
          */
         private boolean condition = false;
+
+        /**
+         * true: in operate part <br/>
+         * Update: set `xxx` = #xxx# <br/>
+         * Load/Query: select `xxx` from (If not select whole entity) <br/>
+         */
+        private boolean operate = false;
 
         private Column column;
     }

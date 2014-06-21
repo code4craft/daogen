@@ -1,7 +1,7 @@
 package com.dianping.daogen.transfer;
 
-import com.dianping.daogen.schema.db.Column;
-import com.dianping.daogen.schema.java.Field;
+import com.dianping.daogen.model.db.Column;
+import com.dianping.daogen.model.java.Field;
 
 /**
  * @author code4crafer@gmail.com
