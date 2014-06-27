@@ -16,7 +16,7 @@ public class InsertDaoMethodGenerator extends AbstractDaoMethodGenerator {
 
     @Override
     protected Type getReturnType(GeneratorContext generatorContext) {
-        return Type.INT;
+        return Type.VOID;
     }
 
     @Override
