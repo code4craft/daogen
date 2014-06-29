@@ -1,4 +1,4 @@
-package com.dianping.daogen.render;
+package com.dianping.daogen.template;
 
 import com.dianping.daogen.GeneratorContext;
 import freemarker.template.Template;

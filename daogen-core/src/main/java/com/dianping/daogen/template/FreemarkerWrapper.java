@@ -1,4 +1,4 @@
-package com.dianping.daogen.render;
+package com.dianping.daogen.template;
 
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.template.Configuration;
